@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Main {
 
-    public static List<Car> createListOfCars(){
-        List<Car> listOfCars = new ArrayList<>();
+    public static ArrayList<Car> createListOfCars(){
+        ArrayList<Car> listOfCars = new ArrayList<>();
         listOfCars.add(new Car("BMW", "i8", 2000 , Color.GREEN,100000.0, "AA0000AA"));
         listOfCars.add(new Car("BMW", "x5", 2018, Color.RED,50000.0, "AA1111AA"));
         listOfCars.add(new Car("BMW", "x5", 2020, Color.BLUE,75000.0, "AA1010AA"));
@@ -22,11 +22,11 @@ public class Main {
             System.out.println(car);
         }
         System.out.println("\nCARS BY MODEL\n");
-        Methods.carsByModel(listOfCars, "x5");
+        for (Car car: Methods.carsByModel(listOfCars, "x5")) System.out.println(car);
         System.out.println("\nOLD CARS BY BRAND\n");
-        Methods.oldCarsByBrand(listOfCars, "BMW", 2);
+        for (Car car: Methods.oldCarsByBrand(listOfCars, "BMW", 2)) System.out.println(car);
         System.out.println("\nEXPENSIVE CARS BY YEAR\n");
-        Methods.expensiveCarsByYear(listOfCars, 2020, 50000.0);
+        for (Car car: Methods.expensiveCarsByYear(listOfCars, 2020, 50000.0)) System.out.println(car);
     }
 
 }
