@@ -18,9 +18,7 @@ public class Main {
     public static void main(String[] args){
         List<Car> listOfCars = createListOfCars();
         System.out.println("ALL CARS\n");
-        for(Car car: listOfCars){
-            System.out.println(car);
-        }
+        for(Car car: listOfCars) System.out.println(car);
         System.out.println("\nCARS BY MODEL\n");
         for (Car car: Methods.carsByModel(listOfCars, "x5")) System.out.println(car);
         System.out.println("\nOLD CARS BY BRAND\n");

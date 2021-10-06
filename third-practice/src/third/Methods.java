@@ -1,25 +1,32 @@
 package third;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 public class Methods {
-    public static void expensiveCarsByYear(List<Car> cars, int year, double price){
+    public static ArrayList<Car> expensiveCarsByYear(List<Car> cars, int year, double price){
+        ArrayList<Car> selectedCars = new ArrayList<>();
         for(Car car: cars){
-            if(car.getYearOfManufacture() == year && car.getPrice() > price) System.out.println(car);
+            if(car.getYearOfManufacture() == year && car.getPrice() > price) selectedCars.add(car);
         }
+        return selectedCars;
     }
 
-    public static void oldCarsByBrand(List<Car> cars, String brand, int year){
+    public static ArrayList<Car> oldCarsByBrand(List<Car> cars, String brand, int year){
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        ArrayList<Car> selectedCars = new ArrayList<>();
         for(Car car: cars){
-            if(car.getBrand() == brand && (currentYear - car.getYearOfManufacture() > year)) System.out.println(car);
+            if(car.getBrand() == brand && (currentYear - car.getYearOfManufacture() > year)) selectedCars.add(car);
         }
+        return selectedCars;
     }
 
-    public static void carsByModel(List<Car> cars, String model){
+    public static ArrayList<Car> carsByModel(List<Car> cars, String model){
+        ArrayList<Car> selectedCars = new ArrayList<>();
         for(Car car: cars){
-            if(car.getModel() == model) System.out.println(car);
+            if(car.getModel() == model) selectedCars.add(car);
         }
+        return selectedCars;
     }
 }
