@@ -34,8 +34,8 @@ hs_err_pid*
 .idea/**/dictionaries
 .idea/**/shelf
 
-.xml
-.iml
+*.xml
+*.iml
 
 # Generated files
 .idea/**/contentModel.xml
