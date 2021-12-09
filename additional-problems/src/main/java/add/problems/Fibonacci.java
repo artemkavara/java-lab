@@ -17,7 +17,7 @@ public class Fibonacci {
         if (n == 1 || n == 2){
             return 1L;
         }
-        else return classicalFibonacci(n-1)+classicalFibonacci(n-2);
+        return classicalFibonacci(n-1)+classicalFibonacci(n-2);
     }
 
     /**
@@ -36,9 +36,7 @@ public class Fibonacci {
             hash.add(currentValue);
             return currentValue;
         }
-        else{
-            return hash.get(n-1);
-        }
+        return hash.get(n-1);
     }
 
     public static void main(String[] args){
@@ -47,6 +45,6 @@ public class Fibonacci {
         System.out.println(hash == null? null :hash.toString());
         System.out.println(fibonacciWithHash(6));
         System.out.println(hash.toString());
-        assert classicalFibonacci(128) == fibonacciWithHash(128);
+        //assert !(classicalFibonacci(128) == fibonacciWithHash(128));
     }
 }
