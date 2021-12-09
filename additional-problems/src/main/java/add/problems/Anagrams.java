@@ -4,6 +4,11 @@ import java.util.TreeMap;
 
 public class Anagrams {
 
+    /**
+     * Creates a map and stores calculated occurrences of each symbols in a word
+     * @param word - checked string
+     */
+
     public static TreeMap<Byte, Integer> countNumberOfLetters(String word){
         TreeMap<Byte, Integer> mapOfBytes = new TreeMap<>();
         byte[] arrayOfBytes = word.getBytes();
