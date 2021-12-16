@@ -7,7 +7,7 @@ public class Unique {
 
     public static Boolean ifUnique(String word){
         TreeMap<Byte, Integer> mapOfBytes = new TreeMap<>();
-        byte[] arrayOfBytes = word.getBytes();
+        byte[] arrayOfBytes = word.toLowerCase().getBytes();
         for (byte wordByte: arrayOfBytes){
             mapOfBytes.computeIfPresent(wordByte, (key, value) -> value+1);
             mapOfBytes.putIfAbsent(wordByte, 1);
@@ -18,6 +18,7 @@ public class Unique {
 
     public static void main(String[] args){
         assert ifUnique("abcde");
+        assert !ifUnique("aAbcde");
         assert ifUnique("12345");
         assert !ifUnique("112345");
     }
